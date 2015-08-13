@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <title>Card Game!</title>
+  </head>
+  <body>
+    <script>
+      var Card = function(suit, rank) {
+        this.suit = suit;
+        this.rank = rank;
+      };
+
+      var Deck = function() {
+        this.cards = [];
+
+        this.suits = ['clubs', 'diamonds', 'hearts', 'spades'];
+        this.ranks = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+
+        this.build = function() {
+          for (var index = 0; index < this.suits.length; index++) {
+            for (var rank = 0; rank < this.ranks.length; rank++) {
+              this.cards.push(new Card(this.suits[index], this.ranks[rank]));
+            };
+          };
+        };
+
+        this.build();
+      };
+
+      var Hand = function(card1, card2) {
+        this.cards = [card1, card2];
+      }
+
+      var Dealer = function() {
+        this.deck = new Deck();
+        this.hand = null; 
+
+        this.deal = function() {
+          var h = new Hand(this.deck.cards.pop(), this.deck.cards.pop());
+          return h;
+        }
+
+        this.shuffle = function() {
+          // TODO: implement me!
+        }
+      }
+
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Game of Fingers</title>
+  </head>
+  <body>
+    <script>
+      // Input
+      var message;
+      var answer = Math.round(Math.random() * 10);
+      console.log(answer);
+      var guess = prompt("HEYO! How many fingers am I holding up?");
+
+      // Algorithm 
+      if (answer == guess) {
+        message = "Lucky guess! Let's see if you can do that again!";
+      } else {
+        message = "Ha ha, you suck, better luck next time!";
+      };
+
+      // Output
+      alert(message);
+    </script>
+  </body>
+</html>
